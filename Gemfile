@@ -15,6 +15,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'figaro'
 
+gem 'graphql'
+
 
 group :development, :test do
 

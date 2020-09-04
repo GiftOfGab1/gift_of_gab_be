@@ -92,6 +92,7 @@ GEM
     graphiql-rails (1.7.0)
       railties
       sprockets-rails
+    graphql (1.11.4)
     highline (2.0.3)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
@@ -227,6 +228,7 @@ DEPENDENCIES
   faker
   figaro
   graphiql-rails
+  graphql
   json (~> 2.3)
   launchy
   listen (>= 3.0.5, < 3.2)
