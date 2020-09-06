@@ -14,6 +14,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'figaro'
 
+gem 'graphql'
+
+
+
 
 group :development, :test do
 
@@ -33,6 +37,7 @@ group :development do
   gem 'travis'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'graphiql-rails'
 end
 
 
