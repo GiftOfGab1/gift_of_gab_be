@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Section.create(title: "greetings", icon: "i am a nice button")
+Section.create(title: "goodbye", icon: "waving hand")
