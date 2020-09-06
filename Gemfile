@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
+gem 'json', '~> 2.3'
 
 gem 'rails', '~> 5.2.4'
 
@@ -13,6 +14,8 @@ gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'figaro'
+
+gem 'graphql'
 
 
 group :development, :test do
@@ -33,6 +36,7 @@ group :development do
   gem 'travis'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'graphiql-rails'
 end
 
 
