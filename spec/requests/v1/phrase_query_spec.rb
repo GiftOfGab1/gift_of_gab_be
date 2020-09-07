@@ -9,7 +9,7 @@ describe 'Phrase Query' do
 
         post "/v1/graphql", params: { query: query(id: hello.id)}
         expect(response).to be_successful  
-        
+
         reply = JSON.parse(response.body, symbolize_names: true)
         expect(reply[:data][:phrase][:expression]).to_not be_empty
         expect(reply[:data][:phrase][:image]).to_not be_empty
@@ -21,7 +21,7 @@ describe 'Phrase Query' do
             phrase(id: #{id}){
                 expression
                 image
-        }
+        }}
         GQL
     end 
     
