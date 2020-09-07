@@ -8,4 +8,4 @@
 
 Section.create(title: "greetings", icon: "i am a nice button")
 Section.create(title: "goodbye", icon: "waving hand")
-User.create(firstName: "Bob", lastName: "Vance", email: "bob@email.com", password:"123", speed:1, pitch:1)
+User.create(firstName: "Bob", lastName: "Vance", email: "bob@email.com", password:"123", speed:1, pitch:1, createdAt: DateTime.now, updatedAt: DateTime.now)
