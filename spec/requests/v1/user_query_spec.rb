@@ -56,9 +56,7 @@ describe 'User Query' do
                 email: "bob@email.com",
                 password:"123",
                 speed:1,
-                pitch:1,
-                createdAt:"2020-09-04 18:06:58",
-                updatedAt:"2020-09-04 18:06:58")
+                pitch:1)
 
     UserSection.create({
       user_id: bob.id,
