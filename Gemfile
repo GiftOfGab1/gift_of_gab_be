@@ -17,6 +17,10 @@ gem 'figaro'
 
 gem 'graphql'
 
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
+
 
 group :development, :test do
 
@@ -29,6 +33,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'graphiql-rails'
 end
 
 group :development do
@@ -36,7 +41,6 @@ group :development do
   gem 'travis'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'graphiql-rails'
 end
 
 

@@ -3,14 +3,13 @@ require 'rails_helper'
 describe 'User Query' do
     it "returns all user info by given id" do
 
-    bob = User.create(firstName: "Bob",
-                lastName: "Vance",
-                email: "bob@email.com",
-                password:"123",
-                speed:1,
-                pitch:1,
-                createdAt:"2020-09-04 18:06:58",
-                updatedAt:"2020-09-04 18:06:58")
+        bob = User.create(firstName: "Bob",
+                    lastName: "Vance",
+                    email: "bob@email.com",
+                    password:"123",
+                    speed:1,
+                    pitch:1,
+                   )
 
     post "/v1/graphql", params: { query: query(id: bob.id)}
     expect(response).to be_successful
