@@ -9,5 +9,6 @@ module Types
     field :pitch, Integer, null: true
     field :createdAt, GraphQL::Types::ISO8601DateTime, null: false
     field :updatedAt, GraphQL::Types::ISO8601DateTime, null: false
+    field :sections, [SectionType], null: true
   end
 end
