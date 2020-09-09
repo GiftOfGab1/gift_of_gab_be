@@ -8,7 +8,7 @@ describe 'User Query' do
                     email: "bob@email.com",
                     password:"123",
                     speed:1,
-                    pitch:1,
+                    voice:1,
                    )
 
     post "/v1/graphql", params: { query: query(id: bob.id)}
@@ -19,7 +19,7 @@ describe 'User Query' do
     expect(reply[:data][:user][:lastName]).to_not be_empty
     expect(reply[:data][:user][:email]).to_not be_empty
     expect(reply[:data][:user][:password]).to_not be_empty
-    expect(reply[:data][:user][:pitch]).to_not be_nil
+    expect(reply[:data][:user][:voice]).to_not be_nil
     expect(reply[:data][:user][:speed]).to_not be_nil
     end
 
@@ -31,7 +31,7 @@ describe 'User Query' do
                 lastName
                 email
                 password
-                pitch
+                voice
                 speed
         }
         }
@@ -56,7 +56,7 @@ describe 'User Query' do
                 email: "bob@email.com",
                 password:"123",
                 speed:1,
-                pitch:1)
+                voice:1)
 
     UserSection.create({
       user_id: bob.id,
@@ -76,7 +76,7 @@ describe 'User Query' do
                   lastName
                   email
                   password
-                  pitch
+                  voice
                   speed
                   sections {
                     title
@@ -124,7 +124,7 @@ describe 'User Query' do
                 email: "bob@email.com",
                 password:"123",
                 speed:1,
-                pitch:1)
+                voice:1)
 
     UserSection.create({
       user_id: bob.id,
@@ -159,7 +159,7 @@ describe 'User Query' do
                   lastName
                   email
                   password
-                  pitch
+                  voice
                   speed
                   sections {
                     title
