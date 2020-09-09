@@ -1,0 +1,19 @@
+before_install:
+- gem install bundler
+language: ruby
+rbenv:
+- 2.5.3
+addons:
+  postgresql: 9.6
+  chrome: stable
+dist: xenial
+script:
+- yarn
+- bundle exec rails db:{create,migrate} RAILS_ENV=test
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: hyuhKgUp1xs4GFcUUgwGad/Fq+Zm7VKEjuU6p7uAz/R0AwrKoWgyMLzmn1Zkezab76LZ8Jj8RNJpDKYWLoUuuvSCW+l3fsdFY03sBePD2iJhnfVJDkwPtacRZdDr3mDrqeQlFkvkjq0XvmQZjIGdWxlbGZTJKBGJgAuN6ntz3xl6jUjcLRTZNWRmqlM4hkjoL01a6u6sfc9phNzhTzlK+jtJfm0Cr5TwFSlOB7APz5OIq1cwI1h9DON+Z8rA6ZzyfZZXF5pv43S7OqbS4IUEUFmArfYYLQShqiL4/sYrwjkJWtamkabSPJoG5VfSoJsFi9cJC8q6Y2ss37Te7ok375MQPlAKuzJ5gPtcsy2xqOxiMryIc4naw8wjtW+HScfjl8IiuwlqwXbdpPfFR8b67xJkhmXGP9rZLp7RzdsXjCq0wKh3RqMSwH/rwInZdZGBplxi5pKo9wvvRBRtoKDXbM6APWSOdRIP2Zw/mrr4YaCBpnOJJGcnJif0/yjmJQuvGESgEuakRE9qLcYO3Pn01jny3kWgLolM065VfDAzCq3koKC2U+1uAeQiwexf5HkrbUk75tCsCTPDDQ8zEuJ89C7tmQQVTHW+hX/eSCs/WXYr61Q5g7nU2irB3qcdCHgNCI5/CIMjxCiiEMiidVNcfvm4cHxyYNNk77sUprQJn+I=
+    app: gift-of-gab
+  run: rails db:migrate
