@@ -45,4 +45,32 @@
                 expression
                 image
         }}
+        
+    Tags by Phrase ID:
+    
+      query{
+            phrase(id: #{id}){
+                expression
+                image
+                tags
+        }}
+        
+   ### Mutations:
+   
+    Update User Info:
+   
+        mutation{
+      updateUser(input: {
+        id: "#{bob.id}"
+        voice: "Rebecca"
+        speed: 0
+        })
+      { user
+        {
+          id,
+          voice,
+          speed
+          }
+        }
+      }
 

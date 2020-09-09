@@ -26,11 +26,4 @@ describe 'Section Query' do
       expect(parsed_response[:data][:sections].first[:title]).to eq('greetings')
       expect(parsed_response[:data][:sections].first[:icon]).to eq('red')
   end
-
-
-
-
-
-
-
 end

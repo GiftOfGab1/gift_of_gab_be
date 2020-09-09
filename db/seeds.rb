@@ -12,6 +12,7 @@ section_3 = Section.create(title: "Quick Responses", icon: "waving hand")
 user_1 = User.create(firstName: "Bob", lastName: "Vance", email: "bob@email.com", password:"123", speed:1, voice: "Matt")
 UserSection.create(user_id: user_1.id, section_id: section_1.id)
 UserSection.create(user_id: user_1.id, section_id: section_2.id)
+<<<<<<< HEAD
 
 # Bank/Greetings
 phrase_1 = Phrase.create(expression: "Hello", image: "")
@@ -109,3 +110,7 @@ SectionPhrase.create(section_id: section_2.id, phrase_id: phrase_34.id)
 
 SectionPhrase.create(section_id: section_3.id, phrase_id: phrase_35.id)
 SectionPhrase.create(section_id: section_3.id, phrase_id: phrase_36.id)
+=======
+phrase_1 = Phrase.create(expression: "Hello", image: "fake.url", tags: ['greeting', 'hello'])
+SectionPhrase.create(section_id: section_1.id, phrase_id: phrase_1.id)
+>>>>>>> a11307a167e00631739435ce2c11f7ee2516ca90

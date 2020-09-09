@@ -20,6 +20,7 @@ gem 'graphql'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
+gem 'rack-cors'
 
 group :development, :test do
 
@@ -33,6 +34,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'graphiql-rails'
+  gem 'simplecov'
 end
 
 group :development do
