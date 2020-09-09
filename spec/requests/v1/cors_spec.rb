@@ -8,7 +8,6 @@ describe "the requests support CORS headers" do
                     )
 
     post '/v1/graphql', params: { query: query(id: hello.id)}, headers: {'ORIGIN' => '*'}
-    binding.pry
     
     expect(response.headers['Access-Control-Allow-Origin']).to eq('*')
   end
