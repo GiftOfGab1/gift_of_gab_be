@@ -2,7 +2,7 @@
 module Mutations
   module Users
     class UpdateUser < ::Mutations::BaseMutation
-      argument :id, Integer, required: true
+      argument :id, ID, required: true
       argument :speed, Integer, required: false
       argument :voice, String, required: false
 
