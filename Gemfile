@@ -34,6 +34,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'graphiql-rails'
+  gem 'simplecov'
 end
 
 group :development do
