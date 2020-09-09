@@ -178,10 +178,10 @@ describe 'User Query' do
     expect(response).to be_successful
 
     reply = JSON.parse(response.body, symbolize_names: true)
-
-    expect(reply[:data][:user][:sections][:phrases]).to_not be_empty
-    expect(reply[:data][:user][:sections][:phrases].first[:expression]).to eq('Hello')
-    expect(reply[:data][:user][:sections][:phrases].last[:expression]).to eq('My name is Bob')
+    expect(reply[:data][:user][:sections].first[:phrases]).to_not be_empty
+    expect(reply[:data][:user][:sections].first[:phrases].first[:expression]).to eq('Hello')
+    expect(reply[:data][:user][:sections].first[:phrases].last[:expression]).to eq('My name is Bob')
+    expect(reply[:data][:user][:sections].last[:phrases].first[:expression]).to eq('My name is Bob')
 
 
 
