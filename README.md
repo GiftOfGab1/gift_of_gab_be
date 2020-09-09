@@ -1,24 +1,48 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Gift of Gab API
 
-Things you may want to cover:
 
-* Ruby version
+* Ruby version: 5.2.3
+* Rails version: 5.2.4
 
-* System dependencies
+### Queries:
 
-* Configuration
+    Endpoint: gift-of-gab.herokuapp.com/v1/graphql 
 
-* Database creation
+    Users by ID:  
+              query{
+              user(id: #{id}){
+                  firstName
+                  lastName
+                  email
+                  password
+                  voice
+                  speed
+                  sections {
+                    title
+                    icon
+                    phrases {
+                      expression
+                      image
+                    }
+                  }
+          }
+          }
 
-* Database initialization
+    All Sections:  
+        query{
+        sections{
+            id
+            title
+            icon
+    }
+    }
 
-* How to run the test suite
+    Phrase by ID: 
+        query{
+            phrase(id: #{id}){
+                expression
+                image
+        }}
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
