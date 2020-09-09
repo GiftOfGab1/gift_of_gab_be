@@ -1,4 +1,3 @@
-
 module Mutations
   module Users
     class UpdateUser < ::Mutations::BaseMutation
