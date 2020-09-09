@@ -20,6 +20,7 @@ gem 'graphql'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
+gem 'rack-cors'
 
 group :development, :test do
 
