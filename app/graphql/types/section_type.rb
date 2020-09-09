@@ -4,6 +4,7 @@ module Types
     field :title, String, null: false
     field :icon, String, null: false
     field :users, [UserType], null: true
+    field :phrases, [PhraseType], null: true
 
   end
 end
