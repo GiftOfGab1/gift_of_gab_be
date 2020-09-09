@@ -13,6 +13,7 @@ describe 'Phrase Query' do
         reply = JSON.parse(response.body, symbolize_names: true)
         expect(reply[:data][:phrase][:expression]).to_not be_empty
         expect(reply[:data][:phrase][:image]).to_not be_empty
+
     end    
 
     def query(id:)
