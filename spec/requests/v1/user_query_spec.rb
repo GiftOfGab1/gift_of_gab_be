@@ -8,7 +8,7 @@ describe 'User Query' do
                     email: "bob@email.com",
                     password:"123",
                     speed:1,
-                    voice:1,
+                    voice: "Matt",
                    )
 
     post "/v1/graphql", params: { query: query(id: bob.id)}
@@ -56,7 +56,7 @@ describe 'User Query' do
                 email: "bob@email.com",
                 password:"123",
                 speed:1,
-                voice:1)
+                voice: "Matt")
 
     UserSection.create({
       user_id: bob.id,
@@ -124,7 +124,7 @@ describe 'User Query' do
                 email: "bob@email.com",
                 password:"123",
                 speed:1,
-                voice:1)
+                voice: "Matt")
 
     UserSection.create({
       user_id: bob.id,
