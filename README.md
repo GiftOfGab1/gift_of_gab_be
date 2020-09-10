@@ -8,69 +8,83 @@
 
 ### Queries:
 
-    Endpoint: gift-of-gab.herokuapp.com/v1/graphql 
+  Endpoint: gift-of-gab.herokuapp.com/v1/graphql
 
-    Users by ID:  
-              query{
-              user(id: #{id}){
-                  firstName
-                  lastName
-                  email
-                  password
-                  voice
-                  speed
-                  sections {
-                    title
-                    icon
-                    phrases {
-                      expression
-                      image
-                    }
-                  }
-          }
-          }
-
-    All Sections:  
-        query{
-        sections{
-            id
+  Users by ID:  
+    query{
+    user(id: #{id}){
+          firstName
+          lastName
+          email
+          password
+          voice
+          speed
+          sections {
             title
             icon
-    }
-    }
-
-    Phrase by ID: 
-        query{
-            phrase(id: #{id}){
-                expression
-                image
-        }}
-        
-    Tags by Phrase ID:
-    
-      query{
-            phrase(id: #{id}){
-                expression
-                image
-                tags
-        }}
-        
-   ### Mutations:
-   
-    Update User Info:
-   
-        mutation{
-      updateUser(input: {
-        id: "#{bob.id}"
-        voice: "Rebecca"
-        speed: 0
-        })
-      { user
-        {
-          id,
-          voice,
-          speed
+            phrases {
+              expression
+              image
+              }
+            }
           }
+        }
+
+    All Sections:  
+      query{
+      sections{
+        id
+        title
+        icon
         }
       }
 
+    Phrase by ID:
+      query{
+        phrase(id: #{id}){
+          expression
+          image
+        }
+      }
+
+    Tags by Phrase ID:
+      query{
+        phrase(id: #{id}){
+          expression
+          image
+          tags
+        }
+      }
+
+   ### Mutations:
+
+    Update User Info:
+      mutation{
+        updateUser(input: {
+          id: ID
+          voice: String
+          speed: Integer
+          })
+        { user
+          {
+            id,
+            voice,
+            speed
+            }
+          }
+        }
+
+    Create New Section:
+      mutation{
+        newSection(input: {
+          title: String,
+          icon: String
+          })
+        { section
+          {
+            id,
+            title,
+            icon
+            }
+          }
+        }
