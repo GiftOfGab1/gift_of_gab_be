@@ -3,8 +3,32 @@
 ## Gift of Gab API
 
 
-* Ruby version: 5.2.3
-* Rails version: 5.2.4
+
+
+## Setup
+First you'll need these installed:
+
+### Versions
+- Rails 5.2.4
+_(to find out what version you are using, run `$ rails -v` in the command line)_
+- Ruby 2.5.3
+_(`$ ruby -v`)_
+
+Next, clone down this repository onto your local machine.
+Run these commands in order to get required gems and database established.
+- `$ bundle install`
+- `$ bundle update`
+- `$ rake db:create`
+- `$ rake db:migrate`
+- `$ rake db:seed`
+
+Once this is all set up and you aren't getting any errors you can run our test suite.
+
+- `$ bundle exec rspec`
+
+### Schema
+
+![Schema](/public/gift_of_gab_schema.png)
 
 ### Queries:
 
@@ -85,6 +109,29 @@
             id,
             title,
             icon
+            }
+          }
+        }
+
+    Delete Section:
+      mutation {
+        deleteSection(input: {id:1}) {
+          section {
+            id
+            title
+            icon
+            }
+          }
+        }
+
+    Delete Phrase:
+      mutation {
+        deletePhrase(input: {id:1}) {
+          phrase {
+            id
+            expression
+            image
+            tags
             }
           }
         }
