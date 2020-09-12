@@ -1,17 +1,17 @@
 module Mutations
   module SectionPhrases
     class NewSectionPhrase < ::Mutations::BaseMutation
-      argument :sectionId, String, required: true
-      argument :phraseId, String, required: true
+      argument :sectionId, ID, required: true
+      argument :phraseId, ID, required: true
 
       field :newSectionPhrase, Types::SectionPhraseType, null: false
       field :sectionPhrase, Types::SectionPhraseType, null: false
-      
+
       def resolve(sectionId:, phraseId:)
-        section_phrase = SectionPhrase.new(sectionId: sectionId, phraseId: phraseId)
+        section_phrase = SectionPhrase.new(sectionId: sectionId , phraseId: phraseId)
         if section_phrase.save
           {
-            sectionPhrase: section_phrase
+            sectionPhrase: section_phrase,
           }
         end
       end
