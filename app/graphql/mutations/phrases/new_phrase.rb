@@ -6,7 +6,6 @@ module Mutations
 
       field :newPhrase, Types::PhraseType, null: false
       field :phrase, Types::PhraseType, null: false
-
       def resolve(expression:, image:)
         phrase = Phrase.new(expression: expression, image: image)
         if phrase.save
