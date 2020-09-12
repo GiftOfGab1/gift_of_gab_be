@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_09_191545) do
+ActiveRecord::Schema.define(version: 2020_09_12_071246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,12 +24,12 @@ ActiveRecord::Schema.define(version: 2020_09_09_191545) do
   end
 
   create_table "section_phrases", force: :cascade do |t|
-    t.bigint "section_id"
-    t.bigint "phrase_id"
+    t.bigint "sectionId"
+    t.bigint "phraseId"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["phrase_id"], name: "index_section_phrases_on_phrase_id"
-    t.index ["section_id"], name: "index_section_phrases_on_section_id"
+    t.index ["phraseId"], name: "index_section_phrases_on_phraseId"
+    t.index ["sectionId"], name: "index_section_phrases_on_sectionId"
   end
 
   create_table "sections", force: :cascade do |t|
@@ -40,12 +40,12 @@ ActiveRecord::Schema.define(version: 2020_09_09_191545) do
   end
 
   create_table "user_sections", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "section_id"
+    t.bigint "userId"
+    t.bigint "sectionId"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["section_id"], name: "index_user_sections_on_section_id"
-    t.index ["user_id"], name: "index_user_sections_on_user_id"
+    t.index ["sectionId"], name: "index_user_sections_on_sectionId"
+    t.index ["userId"], name: "index_user_sections_on_userId"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 2020_09_09_191545) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "section_phrases", "phrases"
-  add_foreign_key "section_phrases", "sections"
-  add_foreign_key "user_sections", "sections"
-  add_foreign_key "user_sections", "users"
+  add_foreign_key "section_phrases", "phrases", column: "phraseId"
+  add_foreign_key "section_phrases", "sections", column: "sectionId"
+  add_foreign_key "user_sections", "sections", column: "sectionId"
+  add_foreign_key "user_sections", "users", column: "userId"
 end

@@ -12,8 +12,8 @@ describe 'New Section Phrase Mutation' do
       { section_phrase
         { 
           id,
-          phraseId: phrase_id,
-          sectionId: section_id
+          phraseId: phraseId,
+          sectionId: sectionId
         }
       }
     }
