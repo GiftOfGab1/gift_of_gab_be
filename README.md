@@ -34,25 +34,25 @@ Once this is all set up and you aren't getting any errors you can run our test s
 
   Endpoint: gift-of-gab.herokuapp.com/v1/graphql
 
-  Users by ID:  
-    query{
-    user(id: #{id}){
-          firstName
-          lastName
-          email
-          password
-          voice
-          speed
-          sections {
-            title
-            icon
-            phrases {
-              expression
-              image
+    Users by ID:  
+      query{
+      user(id: #{id}){
+            firstName
+            lastName
+            email
+            password
+            voice
+            speed
+            sections {
+              title
+              icon
+              phrases {
+                expression
+                image
+                }
               }
             }
           }
-        }
 
     All Sections:  
       query{
