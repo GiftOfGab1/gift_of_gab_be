@@ -113,6 +113,24 @@ Once this is all set up and you aren't getting any errors you can run our test s
           }
         }
 
+  Create New Phrase:
+    mutation{
+      newPhrase(input: {
+        expression: String,
+        image: String,
+        tags: String,
+        sectionId: String
+        })
+      { phrase
+        {
+          id,
+          expression,
+          image,
+          tags
+          }
+        }
+      }
+
     Delete Section:
       mutation {
         deleteSection(input: {id:1}) {
