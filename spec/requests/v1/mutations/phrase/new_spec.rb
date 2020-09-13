@@ -32,5 +32,6 @@ describe 'New Phrase Mutation' do
       expect(parsed_response[:data][:newPhrase][:phrase][:expression]).to eq("Hello")
       expect(parsed_response[:data][:newPhrase][:phrase][:image]).to eq("https://cdn.theculturetrip.com/wp-content/uploads/2016/09/main-bar-at-tir-na-nog.jpg")
       expect(parsed_response[:data][:newPhrase][:phrase][:tags]).to eq(["Greeting"])
+      expect(SectionPhrase.all.count).to eq(1)
   end
 end
