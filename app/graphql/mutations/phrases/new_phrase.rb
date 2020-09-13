@@ -12,7 +12,7 @@ module Mutations
       def resolve(expression:, image:, tags:, section_id:)
         phrase = Phrase.new(expression: expression, image: image, tags: [tags])
         if phrase.save
-          section_phrase = SectionPhrase.new(section_id: section_id, phrase_id: phrase.id)
+          section_phrase = SectionPhrase.create(section_id: section_id, phrase_id: phrase.id)
           {
             phrase: phrase
           }
